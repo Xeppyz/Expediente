@@ -45,13 +45,29 @@ public class Ecita extends javax.swing.JInternalFrame {
         setMaximizable(true);
         setResizable(true);
         setTitle("Nueva Cita");
+        addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
+            public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameDeactivated(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameDeiconified(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameIconified(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameOpened(javax.swing.event.InternalFrameEvent evt) {
+                formInternalFrameOpened(evt);
+            }
+        });
 
         jLabel1.setText("Paciente");
 
         jLabel2.setText("Fecha");
 
         tfFecha.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
-        tfFecha.setText("/ /");
         tfFecha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfFechaActionPerformed(evt);
@@ -160,10 +176,7 @@ public class Ecita extends javax.swing.JInternalFrame {
     }
      
     private void formWindowOpened(java.awt.event.WindowEvent evt) {
-        
-        cln.cargarPacientes();
-        Paciente s = this.cln.leerPaciente();
-        this.mostrarPaciente(s);
+
     }//GEN-LAST:event_bAnteriorActionPerformed
 
     private void bGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bGuardarActionPerformed
@@ -185,6 +198,12 @@ public class Ecita extends javax.swing.JInternalFrame {
             this.tfPaciente.setText(p.getNombre());
         }
     }//GEN-LAST:event_tfFechaActionPerformed
+
+    private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameOpened
+        cln.cargarPacientes();
+        Paciente s = this.cln.leerPaciente();
+        this.mostrarPaciente(s);
+    }//GEN-LAST:event_formInternalFrameOpened
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
