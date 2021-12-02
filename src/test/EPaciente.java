@@ -57,6 +57,23 @@ public class EPaciente extends javax.swing.JInternalFrame {
         setMaximizable(true);
         setResizable(true);
         setTitle("Agregar Paciente");
+        addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
+            public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameDeactivated(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameDeiconified(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameIconified(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameOpened(javax.swing.event.InternalFrameEvent evt) {
+                formInternalFrameOpened(evt);
+            }
+        });
 
         jLabel1.setText("Nombre");
         jLabel1.setAutoscrolls(true);
@@ -194,7 +211,6 @@ public class EPaciente extends javax.swing.JInternalFrame {
     }
     
     private void formwindowOpened(java.awt.event.WindowEvent evt){
-        m.cargarPacientes();
     }
     
             
@@ -211,6 +227,10 @@ public class EPaciente extends javax.swing.JInternalFrame {
     private void tfNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNombreActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tfNombreActionPerformed
+
+    private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameOpened
+        m.cargarPacientes();
+    }//GEN-LAST:event_formInternalFrameOpened
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

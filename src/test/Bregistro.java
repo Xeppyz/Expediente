@@ -51,6 +51,23 @@ public class Bregistro extends javax.swing.JInternalFrame {
         setMaximizable(true);
         setResizable(true);
         setTitle("Buscar Registro");
+        addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
+            public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameDeactivated(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameDeiconified(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameIconified(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameOpened(javax.swing.event.InternalFrameEvent evt) {
+                formInternalFrameOpened(evt);
+            }
+        });
 
         jLabel1.setText("Paciente");
 
@@ -191,9 +208,6 @@ public class Bregistro extends javax.swing.JInternalFrame {
         this.cln.modificarRegistro(n);
     }
     private void formWindowOpened(java.awt.event.WindowEvent evt) {
-        cln.cargarRegistro();
-        Registro n = this.cln.leerRegistroAct();
-        this.mostrarRegistro(n);
         
     }//GEN-LAST:event_bModificarActionPerformed
 
@@ -218,6 +232,13 @@ public class Bregistro extends javax.swing.JInternalFrame {
     
          
     }//GEN-LAST:event_tfPacienteActionPerformed
+
+    private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameOpened
+        
+        cln.cargarRegistro();
+        Registro n = this.cln.leerRegistroAct();
+        this.mostrarRegistro(n);
+    }//GEN-LAST:event_formInternalFrameOpened
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
